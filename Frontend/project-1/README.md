@@ -1,16 +1,59 @@
-# React + Vite
+# Cloud Image Upload App (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of a Cloud Image Upload Application built using React.js.
+It allows users to upload images from their local device with a caption and view all uploaded posts in a feed.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+* Upload image from local device using file input
+* Add caption with image
+* Send data to backend using FormData
+* Redirect to feed after successful upload
+* Fetch and display all posts from backend
+* Show image with caption in feed
+* Handle empty state when no posts are available
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React.js
+* Axios
+* Tailwind CSS
+
+---
+
+## Functionality Overview
+
+### Create Post
+
+* User selects an image file
+* Adds a caption
+* On submit:
+
+  * Form data is sent to backend API (`/create_post`)
+  * After successful upload, user is redirected to `/feed`
+
+### Feed Page
+
+* Fetches all posts from backend API (`/posts`)
+* Displays:
+
+  * Uploaded image
+  * Caption
+* If no posts are available, shows a message
+
+---
+
+## API Endpoints Used
+
+* POST `/create_post` → Upload image and caption
+* GET `/posts` → Fetch all posts
+
+---
+
+## Author
+
+Siddhi Sisodiya
