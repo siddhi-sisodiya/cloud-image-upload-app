@@ -1,72 +1,102 @@
 # Cloud Image Upload App
 
-Cloud Image Upload App is a full-stack web application that allows users to upload images, store them on a cloud service, and view them in a feed. The application uses ImageKit for cloud storage and MongoDB for storing image URLs.
+Cloud Image Upload App is a full-stack web application that allows users to upload images, store them on a cloud service, and view them in a feed.
 
 ---
 
 ## Features
 
-* Upload images from the frontend
+* Upload images from local device
 * Store images on cloud using ImageKit
-* Save image URLs in MongoDB database
+* Save image URLs and captions in MongoDB database
 * Fetch and display images in a feed
 * REST API integration (GET & POST requests)
 * Responsive UI using Tailwind CSS
-* Fast and smooth user experience
 
 ---
 
 ## Tech Stack
 
-* React JS
+* React.js (Frontend)
 * Tailwind CSS
 * JavaScript (ES6)
-* Node.js
+* Node.js (Backend)
 * Express.js
-* MongoDB
-* ImageKit (Cloud Service)
+* MongoDB (Database)
+* ImageKit (Cloud Storage)
 
 ---
 
 ## Project Structure
 
-```
 project/
- ├── frontend/
- ├── backend/
- └── README.md
-```
+├── frontend/   → React application (UI)
+├── backend/    → Node.js + Express API
+└── README.md
 
 ---
 
-## API
+## Frontend (React)
 
-This project uses custom backend APIs built with Express.js:
+* Built using React.js
+* Provides user interface for image upload
+* Uses file input to select images from local system
+* Sends image and caption to backend using FormData
+* Fetches and displays posts in feed using API
 
-* POST API for uploading images
-* GET API for fetching images
+---
+
+## Backend (Node.js & Express)
+
+* Handles API requests from frontend
+* Uploads images to ImageKit cloud service
+* Generates image URL after upload
+* Stores image URL and caption in MongoDB
+* Provides API endpoints for:
+
+  * Uploading images (POST)
+  * Fetching all posts (GET)
+
+---
+
+## Database (MongoDB)
+
+* MongoDB is used to store image data
+* Each post contains:
+
+  * Image URL
+  * Caption
+* Backend connects to MongoDB using a database connection
+* Data is stored in collections and retrieved when needed
+
+---
+
+## API Endpoints
+
+* POST `/create_post` → Upload image and caption
+* GET `/posts` → Fetch all posts
 
 ---
 
 ## How It Works
 
-* User selects an image from frontend
+* User selects image from frontend
 * Image is sent to backend
 * Backend uploads image to ImageKit
 * Image URL is generated
-* URL is stored in MongoDB
-* Images are fetched and displayed in feed
+* URL and caption are stored in MongoDB
+* Frontend fetches and displays images
 
 ---
 
 ## Learning Outcomes
 
-* Understanding of full-stack development
-* Working with React frontend
-* Building REST APIs using Node.js & Express
+* Full-stack development understanding
+* React frontend development
+* REST API creation using Node.js & Express
 * Database handling with MongoDB
-* Cloud integration using ImageKit
-* Handling file uploads and storing data
+* Cloud storage integration
+* File upload handling
 
 ---
 
